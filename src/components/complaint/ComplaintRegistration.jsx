@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Layout from '../layout/Layout';
 import { addDoc, collection, Timestamp } from 'firebase/firestore';
 import { fireDB } from '../../firebase/FirebaseConfig';
+import { toast } from 'react-toastify';
 
 const ComplaintRegistration = () => {
     // State for form fields
@@ -49,9 +50,9 @@ const ComplaintRegistration = () => {
                 complaintRemarks: '',
                 techSupportRepresentative: '',
             }); // Reset the form
+            toast.success("complaint add successfully");
         } catch (error) {
-            console.error('Error registering complaint: ', error);
-            alert('Failed to register complaint. Please try again.');
+            toast.error('Failed to register complaint. Please try again.');
         }
     };
 

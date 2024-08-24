@@ -8,7 +8,7 @@ const Footer = () => {
                 <div className="container mx-auto px-4">
                     <div className="flex flex-wrap justify-between items-start">
                         <div className="w-full md:w-1/4 mb-6 md:mb-0">
-                            <img src="https://suparco.gov.pk/wp-content/uploads/2019/08/logo.png" alt="Electro Logo" className="mb-4 Filter" />
+                            <img src="https://suparco.gov.pk/wp-content/uploads/2019/08/logo.png" alt="Electro Logo" className="mb-4 Filter w-[60%]" />
                             <div className="flex space-x-4">
                                 {/* <Link to={`#`} className="text-foreground hover:text-primary bg-blue-100 p-2 rounded-md text-blue-800"><FaFacebookF /></Link>
                                 <Link to={`#`} className="text-foreground hover:text-primary bg-blue-100 p-2 rounded-md text-blue-800"><FaInstagram /></Link>

@@ -4,6 +4,7 @@ import Layout from '../layout/Layout';
 import { format } from 'date-fns';
 import { doc, getDoc, Timestamp, updateDoc } from 'firebase/firestore';
 import { fireDB } from '../../firebase/FirebaseConfig';
+import { toast } from 'react-toastify';
 
 const ComplaintDetails = () => {
     const { id } = useParams();
@@ -25,6 +26,7 @@ const ComplaintDetails = () => {
                 }
             } catch (error) {
                 console.error('Error fetching complaint:', error);
+                toast.error("Error in fetching the complaint");
             }
         };
 
@@ -61,9 +63,10 @@ const ComplaintDetails = () => {
             const docRef = doc(fireDB, 'complaints', id);
             await updateDoc(docRef, { status });
             setComplaint(prev => ({ ...prev, status }));
-            alert('Status updated successfully');
+            toast.success("complaint updated Successfully");
         } catch (error) {
             console.error('Error updating status:', error);
+            toast.error("Error in updating the status");
         }
     };
 
